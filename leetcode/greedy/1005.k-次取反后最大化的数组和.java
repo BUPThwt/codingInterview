@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 
 
@@ -34,7 +35,15 @@ class Solution {
     }
 
     // public int largestSumAfterKNegations(int[] A, int K) {
-    //     Arrays.sort(A, (o1, o2) -> o1 - o2);
+    //     Arrays.sort(A, (o1, o2) -> {
+    //         if(Math.abs(o1) > Math.abs(o2)){
+    //             return -1;
+    //         }else if(Math.abs(o1) < Math.abs(o2)){
+    //             return 1;
+    //         }else{
+    //             return 0;
+    //         }
+    //     });
     //     int i = 0;
     //     while (K-- > 0 && i < A.length) {
     //         if (A[i] < 0) {
