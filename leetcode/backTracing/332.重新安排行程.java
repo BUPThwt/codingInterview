@@ -17,7 +17,8 @@ class Solution {
         List<String> result = new LinkedList<>();
         Map<String, PriorityQueue<String>> graph = new HashMap<>();
         for(List<String> pair : tickets){
-            PriorityQueue<String> queue = graph.computeIfAbsent(pair.get(0), k -> new PriorityQueue<>());
+            // PriorityQueue<String> queue = graph.computeIfAbsent(pair.get(0), k -> new PriorityQueue<>());
+            PriorityQueue<String> queue = graph.getOrDefault(pair.get(0), new PriorityQueue<String>());
             queue.add(pair.get(1));
             graph.put(pair.get(0), queue);
         }
