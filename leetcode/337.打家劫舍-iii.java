@@ -22,16 +22,15 @@ class Solution {
         return Math.max(result[0], result[1]);
     }
 
-    // 0是偷当前   1是不偷当前
+    // 0 不偷，1 偷
     private int[] robRange(TreeNode node){
         if(node == null){
             return new int[]{0, 0};
         }
-        int cur = node.val;
         int[] left = robRange(node.left);
         int[] right = robRange(node.right);
-        int val1 = cur + left[1] + right[1];
-        int val2 = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        int val1 = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        int val2 = left[0] + right[0] + node.val;
         return new int[]{val1, val2};
     }
 }
